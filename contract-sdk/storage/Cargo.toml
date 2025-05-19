@@ -1,0 +1,11 @@
+[package]
+name = "oasis-contract-sdk-storage"
+description = "A high-level storage abstraction for the Oasis Contract SDK."
+version = "0.3.0"
+authors = ["Oasis Protocol Foundation <info@oasisprotocol.org>"]
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+cbor = { version = "0.5.1", package = "oasis-cbor" }
+oasis-contract-sdk = { path = ".." }

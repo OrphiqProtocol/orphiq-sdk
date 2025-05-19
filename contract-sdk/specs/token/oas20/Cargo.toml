@@ -1,0 +1,37 @@
+[package]
+name = "oasis-contract-sdk-oas20"
+version = "0.3.0"
+description = "OAS-20 contract"
+authors = ["Oasis Protocol Foundation <info@oasisprotocol.org>"]
+edition = "2021"
+license = "Apache-2.0"
+
+[workspace]
+
+[lib]
+name = "oas20"
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+cbor = { version = "0.5.1", package = "oasis-cbor" }
+oasis-contract-sdk = { path = "../../.." }
+oasis-contract-sdk-storage = { path = "../../../storage" }
+oasis-contract-sdk-types = { path = "../../../types" }
+
+# Third party.
+thiserror = "1.0.59"
+
+[dev-dependencies]
+base64 = "0.22.1"
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = "abort"
+incremental = false
+overflow-checks = true
+strip = true
