@@ -1,0 +1,48 @@
+[workspace]
+members = [
+    # Runtime SDK Core.
+    "runtime-sdk",
+    "runtime-sdk-macros",
+
+    # Runtime SDK Modules.
+    "runtime-sdk/modules/contracts",
+    "runtime-sdk/modules/evm",
+    "runtime-sdk/modules/rofl-market",
+
+    # Smart Contract SDK.
+    "contract-sdk",
+    "contract-sdk/crypto",
+    "contract-sdk/types",
+    "contract-sdk/storage",
+    "contract-sdk-macros",
+
+    # ROFL.
+    "rofl-utils",
+    "rofl-appd",
+    "rofl-containers",
+    "rofl-scheduler",
+
+    # Test runtimes.
+    "tests/runtimes/benchmarking",
+    "tests/runtimes/simple-keyvalue",
+    "tests/runtimes/simple-consensus",
+    "tests/runtimes/simple-evm",
+    "tests/runtimes/simple-contracts",
+    "tests/runtimes/components-ronl",
+    "tests/runtimes/components-rofl",
+]
+exclude = [
+    # Test contracts.
+    "tests/contracts",
+    # Example contracts and runtimes.
+    "examples/contract-sdk/hello-world",
+    "examples/contract-sdk/c10l-hello-world",
+    "examples/runtime-sdk/minimal-runtime",
+    "examples/runtime-sdk/rofl-oracle",
+    "examples/runtime-sdk/rofl-oracle-tdx",
+]
+resolver = "2"
+
+[profile.bench]
+codegen-units = 1
+lto = "thin"
